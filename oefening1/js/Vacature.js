@@ -40,4 +40,11 @@ export default class Vacature {
       false
     );
   }
+  /* of via het gebruik van de some() functie: 
+  bevatZoekterm(zoektermen) {
+    return zoektermen.some((zoekterm) => {
+      return this.#titel.toLowerCase().includes(zoekterm.toLowerCase());
+    });
+  }
+  */
 }
