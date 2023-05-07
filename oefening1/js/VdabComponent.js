@@ -42,6 +42,14 @@ export default class VdabComponent {
     this.#setZoektermenInStorage();
     this.#toHtml();
   }
+  /*
+  Of via de filter methode:
+  #verwijderZoekterm(zoekterm) {
+    this.#zoektermen = this.#zoektermen.filter((z) => z !== zoekterm);
+    this.#setZoektermenInStorage();
+    this.#toHtml();
+  }
+  */
 
   #getZoektermenFromStorage() {
     this.#zoektermen = [];
