@@ -14,10 +14,10 @@ export default class BankComponent {
 
     this.#getAantalBezoekenFromStorage();
     this.#setAantalBezoekenInStorage();
-    this.toHtml();
+    this.#toHtml();
   }
 
-  toHtml() {
+  #toHtml() {
     this.#tekstToHtml();
     this.#canvasCategorieen.tekenen(this.#uitgavenRepository);
   }
@@ -40,8 +40,7 @@ export default class BankComponent {
 
   #getAantalBezoekenFromStorage() {
     if (this.#storage.getItem('aantalBezoeken')) {
-      this.#aantalBezoeken =
-        parseInt(this.#storage.getItem('aantalBezoeken')) + 1;
+      this.#aantalBezoeken = parseInt(this.#storage.getItem('aantalBezoeken')) + 1;
     } else {
       this.#aantalBezoeken = 1;
     }
@@ -57,16 +56,6 @@ export default class BankComponent {
 }
 
 Date.prototype.datumNotatie = function () {
-  const dagen = [
-    'Zondag',
-    'Maandag',
-    'Dinsdag',
-    'Woensdag',
-    'Donderdag',
-    'Vrijdag',
-    'Zaterdag',
-  ];
-  return `${dagen[this.getDay()]} ${this.getDate()}/${
-    this.getMonth() + 1
-  }/${this.getFullYear()}`;
+  const dagen = ['Zondag', 'Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag', 'Zaterdag'];
+  return `${dagen[this.getDay()]} ${this.getDate()}/${this.getMonth() + 1}/${this.getFullYear()}`;
 };
